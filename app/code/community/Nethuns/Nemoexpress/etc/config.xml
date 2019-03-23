@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Nethuns_Nemoexpress>
+            <version>1.0.0</version>
+        </Nethuns_Nemoexpress>
+    </modules>
+
+    <frontend>
+        <routers>
+            <nethuns_nemoexpress>
+                <use>standard</use>
+                <args>
+                    <module>Nethuns_Nemoexpress</module>
+                    <frontName>nethuns_nemoexpress</frontName>
+                </args>
+            </nethuns_nemoexpress>
+        </routers>
+    </frontend>
+
+    <global>
+        <models>
+            <nethuns_nemoexpress>
+                <class>Nethuns_Nemoexpress_Model</class>
+                <resourceModel>nethuns_nemoexpress_mysql4</resourceModel>
+            </nethuns_nemoexpress>
+            <nethuns_nemoexpress_mysql4>
+                <class>Nethuns_Nemoexpress_Model_Mysql4</class>
+                <entities>
+                    <nethuns_nemoexpress>
+                        <table>nethuns_nemoexpress</table>
+                    </nethuns_nemoexpress>
+                </entities>
+            </nethuns_nemoexpress_mysql4>
+        </models>
+        <resources>
+            <nethuns_nemoexpress_setup>
+                <setup>
+                    <module>Nethuns_Nemoexpress</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </nethuns_nemoexpress_setup>
+            <nethuns_nemoexpress_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </nethuns_nemoexpress_write>
+            <nethuns_nemoexpress_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </nethuns_nemoexpress_read>
+        </resources>
+        <blocks>
+            <nethuns_nemoexpress>
+                <class>Nethuns_Nemoexpress_Block</class>
+            </nethuns_nemoexpress>
+        </blocks>
+        <helpers>
+            <nethuns_nemoexpress>
+                <class>Nethuns_Nemoexpress_Helper</class>
+            </nethuns_nemoexpress>
+        </helpers>
+    </global>
+
+    <adminhtml>
+        <translate>
+            <modules>
+                <nethuns_nemoexpress>
+                    <files>
+                        <default>Nethuns_Nemoexpress.csv</default>
+                    </files>
+                </nethuns_nemoexpress>
+            </modules>
+        </translate>
+    </adminhtml>
+
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Nethuns_Nemoexpress after="Mage_Adminhtml">Nethuns_Nemoexpress_Adminhtml</Nethuns_Nemoexpress>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
+    <default>
+        <carriers>
+            <nemoexpress>
+                <model>nethuns_nemoexpress/carrier_nemoexpress</model>
+                <showmethod>1</showmethod>
+                <title>Nemo Express</title>
+                <api_url>http://api.nemoexpress.net/v2/</api_url>
+                <sort_order>1</sort_order>
+            </nemoexpress>
+        </carriers>
+    </default>
+</config>

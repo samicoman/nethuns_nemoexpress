@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <sections>
+        <carriers>
+            <groups>
+                <nemoexpress translate="label" module="nethuns_nemoexpress">
+                    <label>Nemo Express</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>12</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <active translate="label">
+                            <label>Enable</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </active>
+                        <showmethod translate="label">
+                            <label>Show method</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </showmethod>
+                        <title translate="label">
+                            <label>Title</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </title>
+
+                        <api_url translate="label">
+                            <label>API URL</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </api_url>
+                        <api_key translate="label">
+                            <label>API Key</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>15</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </api_key>
+
+                        <payer translate="label">
+                            <label>Shipping Payer</label>
+                            <comment>Who pays for the shipping. If the shipping costs were already included in the bill,
+                            choose "Sender".</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>nethuns_nemoexpress/carrier_source_payer</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </payer>
+                        <cod_type translate="label">
+                            <label>Cash on delivery type</label>
+                            <comment>How will the merchant receive the money paid on delivery</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>nethuns_nemoexpress/carrier_source_codtype</source_model>
+                            <sort_order>25</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </cod_type>
+                        <bank translate="label">
+                            <label>Bank</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </bank>
+                        <iban translate="label">
+                            <label>Iban</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>35</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </iban>
+
+                        <special_conditions translate="label">
+                            <label>Special conditions</label>
+                            <comment>Additional services provided by default to the customers.</comment>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>nethuns_nemoexpress/carrier_source_specialconditions</source_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </special_conditions>
+
+                        <default_package_type translate="label">
+                            <label>Package type</label>
+                            <comment>The most often package size used.</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>nethuns_nemoexpress/carrier_source_packagetype</source_model>
+                            <sort_order>45</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </default_package_type>
+
+
+                        <default_height translate="label">
+                            <label>Default Package Height</label>
+                            <comment>Most common value met. Used if not already set on product.</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </default_height>
+                        <default_depth translate="label">
+                            <label>Default Package Depth</label>
+                            <comment>Most common value met. Used if not already set on product.</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>55</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </default_depth>
+                        <defaul_width translate="label">
+                            <label>Default Package Width</label>
+                            <comment>Most common value met. Used if not already set on product.</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </defaul_width>
+                        <default_weight translate="label">
+                            <label>Default Package Weight</label>
+                            <comment>Most common value met. Used if not already set on product.</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>65</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </default_weight>
+
+                        <sort_order translate="label">
+                            <label>Sort order</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </sort_order>
+                    </fields>
+                </nemoexpress>
+            </groups>
+        </carriers>
+    </sections>
+</config>
